@@ -1,22 +1,25 @@
 <html>
 <head>
 	<title>My Profile</title>
-	<h1 align="center">My Profile</h1>
 </head>
 
-<!-- Read the favorite color cookie -->
+<!-- Read and get cookies from browser -->
 <%
-	// set the default to red (if there are no cookies)
+	// set the default cookie values (if there are no cookies)
 	String favColor = "Red";
+	String favMovie = "N/A";
 
-	// get cookies from the browser request
+	// get all cookies from the browser request
 	Cookie[] cookiesArray = request.getCookies();
 	
-	// find the favorite color cookie
+	// find the cookies and set their corresponding values
 	if (cookiesArray != null) {
 		for (Cookie x : cookiesArray){
 			if ("myProfile.favColor".equals(x.getName())){
 				favColor = x.getValue();
+			}
+			if ("myProfile.favMovie".equals(x.getName())){
+				favMovie = x.getValue();
 				break;
 			}
 		}
@@ -24,10 +27,17 @@
 %>
 
 <body>
+	<h1 align="center">My Profile</h1>
+
 	<!-- Display a personalized page based on user's selections -->
 	<h4>Favorite Color</h4>
 	<ul>
 		<li><%= favColor %>
+	</ul>
+	
+	<h4>Favorite Movie</h4>
+	<ul>
+		<li><%= favMovie %></li>
 	</ul>
 	
 	<!-- Add link to myProfile.html to edit page -->
