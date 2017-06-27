@@ -21,7 +21,11 @@
 %>
 
 <body>
+	Awesome!  Your favorite color has been set to ${param.favColor}.
 	
+	<br/><br/>
+	
+	<a href="myProfileHome.jsp">Return to My Profile.</a>
 </body>
 
 </html>
