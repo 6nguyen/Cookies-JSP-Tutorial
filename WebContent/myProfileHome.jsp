@@ -8,6 +8,7 @@
 	// set the default cookie values (if there are no cookies)
 	String ethnicity = "N/A";
 	String favMovie = "N/A";
+	String favAnimal = "N/A";
 
 	// get all cookies from the browser request
 	Cookie[] cookiesArray = request.getCookies();
@@ -18,9 +19,11 @@
 			if ("myProfile.ethnicity".equals(x.getName())){
 				ethnicity = x.getValue();
 			}
-			if ("myProfile.favMovie".equals(x.getName())){
+			else if ("myProfile.favMovie".equals(x.getName())){
 				favMovie = x.getValue();
-				break;
+			}
+			else if ("myProfile.favAnimal".equals(x.getName())){
+				favAnimal = x.getValue();
 			}
 		}
 	}
@@ -38,6 +41,11 @@
 	<h4>Favorite Movie</h4>
 	<ul>
 		<li><%= favMovie %></li>
+	</ul>
+	
+	<h4>Spirit Animal</h4>
+	<ul>
+		<li><%= favAnimal %></li>
 	</ul>
 	
 	<!-- Add link to myProfile.html to edit page -->
