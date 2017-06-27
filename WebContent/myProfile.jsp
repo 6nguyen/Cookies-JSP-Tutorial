@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title>Profile Saved</title>
-	<h1 align="center">Your Profile has been Saved</h1>
 </head>
 
 <%
@@ -21,6 +20,8 @@
 %>
 
 <body>
+	<h1 align="center">Your Profile has been Saved</h1>
+	
 	Awesome!  Your favorite color has been set to ${param.favColor}.
 	
 	<br/><br/>
