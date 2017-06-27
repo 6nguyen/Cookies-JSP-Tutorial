@@ -6,7 +6,7 @@
 <!-- Read and get cookies from browser -->
 <%
 	// set the default cookie values (if there are no cookies)
-	String favColor = "Red";
+	String ethnicity = "N/A";
 	String favMovie = "N/A";
 
 	// get all cookies from the browser request
@@ -15,8 +15,8 @@
 	// find the cookies and set their corresponding values
 	if (cookiesArray != null) {
 		for (Cookie x : cookiesArray){
-			if ("myProfile.favColor".equals(x.getName())){
-				favColor = x.getValue();
+			if ("myProfile.ethnicity".equals(x.getName())){
+				ethnicity = x.getValue();
 			}
 			if ("myProfile.favMovie".equals(x.getName())){
 				favMovie = x.getValue();
@@ -30,9 +30,9 @@
 	<h1 align="center">My Profile</h1>
 
 	<!-- Display a personalized page based on user's selections -->
-	<h4>Favorite Color</h4>
+	<h4>Ethnicity</h4>
 	<ul>
-		<li><%= favColor %>
+		<li><%= ethnicity %>
 	</ul>
 	
 	<h4>Favorite Movie</h4>
