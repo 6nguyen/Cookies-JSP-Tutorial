@@ -8,11 +8,14 @@
 	String ethnicity = request.getParameter("ethnicity");
 	String favMovie = request.getParameter("favMovie");
 	String favAnimal = request.getParameter("favAnimal");
+	String favHobby = request.getParameter("favHobby");
 
 	// create the corresponding cookies
+	// new Cookie(cookie_name, value)
 	Cookie ethnicCookie = new Cookie("myProfile.ethnicity", ethnicity);
 	Cookie movieCookie = new Cookie("myProfile.favMovie", favMovie);
 	Cookie animalCookie = new Cookie("myProfile.favAnimal", favAnimal);
+	Cookie hobbyCookie = new Cookie("myProfile.favHobby", favHobby);
 	
 	// set the life span of cookie in SECONDS
 	// default life span is 0, ie cookie is deleted when session ends
@@ -20,11 +23,13 @@
 	ethnicCookie.setMaxAge(60*60*24*183);
 	movieCookie.setMaxAge(60*60*24*183);
 	animalCookie.setMaxAge(60*60*24*183);
+	hobbyCookie.setMaxAge(60*60*24*183);
 	
 	// send cookie to the browser
 	response.addCookie(ethnicCookie);
 	response.addCookie(movieCookie);
 	response.addCookie(animalCookie);
+	response.addCookie(hobbyCookie);
 %>
 
 <body>
@@ -42,6 +47,9 @@
 		}
 		if (favAnimal != null && !favAnimal.trim().equals("")) {
 			out.println("<li>Your favorite animal has been set to " + favAnimal + ".</li>");
+		}
+		if (favHobby != null && !favHobby.trim().equals("")) {
+			out.println("<li>Your favorite hobby has been set to " + favHobby + ".</li>");
 		}
 	%>	
 		

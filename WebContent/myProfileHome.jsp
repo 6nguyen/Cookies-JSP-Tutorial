@@ -9,6 +9,7 @@
 	String ethnicity = "N/A";
 	String favMovie = "N/A";
 	String favAnimal = "N/A";
+	String favHobby = "N/A";
 
 	// get all cookies from the browser request
 	Cookie[] cookiesArray = request.getCookies();
@@ -24,6 +25,10 @@
 			}
 			else if ("myProfile.favAnimal".equals(x.getName())){
 				favAnimal = x.getValue();
+			}
+			// conditional statement does same thing, just written differently
+			else if (x.getName().equals("myProfile.favHobby")) {
+				favHobby = x.getValue();
 			}
 		}
 	}
@@ -46,6 +51,11 @@
 	<h4>Spirit Animal</h4>
 	<ul>
 		<li><%= favAnimal %></li>
+	</ul>
+	
+	<h4>Favorite Hobby</h4>
+	<ul>
+		<li><%= favHobby %></li>
 	</ul>
 	
 	<!-- Add link to myProfile.html to edit page -->
