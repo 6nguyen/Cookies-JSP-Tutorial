@@ -33,9 +33,18 @@
 	Awesome! We've made some changes to your profile.
 	<br/>
 	<ul>
-		<li>Your ethnicity has been set to ${param.ethnicity}.</li>
-		<li>Your favorite movie has been set to ${param.favMovie}.</li>
-		<li>Your favorite animal has been set to ${param.favAnimal}.</li>
+	<%
+		if (ethnicity != null && !ethnicity.trim().equals("")){
+			out.println("<li>Your ethnicity has been set to " + ethnicity + ".</li>");
+		}
+		if (favMovie != null && !favMovie.trim().equals("")){
+			out.println("<li>Your favorite movie has been set to " + favMovie + ".</li>");
+		}
+		if (favAnimal != null && !favAnimal.trim().equals("")) {
+			out.println("<li>Your favorite animal has been set to " + favAnimal + ".</li>");
+		}
+	%>	
+		
 	</ul>
 	
 	<br/><br/>
