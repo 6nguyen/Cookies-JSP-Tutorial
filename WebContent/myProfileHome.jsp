@@ -7,6 +7,8 @@
 <%
 	// set the default cookie values (if there are no cookies)
 	String fullName = "N/A";
+	String gender = "N/A";
+	String seeking = "N/A";
 	String ethnicity = "N/A";
 	String favMovie = "N/A";
 	String favAnimal = "N/A";
@@ -20,6 +22,12 @@
 		for (Cookie x : cookiesArray){
 			if (x.getName().equals("myProfile.fullName")) {
 				fullName = x.getValue();
+			}
+			if (x.getName().equals("myProfile.gender")) {
+				gender = x.getValue();
+			}
+			if (x.getName().equals("myProfile.seeking")){
+				seeking = x.getValue();
 			}
 			if ("myProfile.ethnicity".equals(x.getName())){
 				ethnicity = x.getValue();
@@ -43,6 +51,7 @@
 
 	<!-- Display a personalized page based on user's selections -->
 	<h2><%= fullName %></h2>
+	<%= gender %> interested in <%= seeking %>.
 	<hr>
 	
 	<h4>Ethnicity</h4>
