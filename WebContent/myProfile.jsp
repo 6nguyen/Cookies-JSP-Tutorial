@@ -4,7 +4,7 @@
 </head>
 
 <%
-	// read form data
+	// read form data from myProfile.html
 	String firstName = request.getParameter("firstName");
 	String lastName = request.getParameter("lastName");
 	String fullName = firstName + " " + lastName;
