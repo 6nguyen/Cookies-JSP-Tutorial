@@ -1,3 +1,6 @@
+<!-- To handle cookie names with whitespace, import URL Encoder -->
+<%@page import="java.net.URLEncoder" %>
+
 <html>
 <head>
 	<title>Profile Saved</title>
@@ -14,6 +17,15 @@
 	String favMovie = request.getParameter("favMovie");
 	String favAnimal = request.getParameter("favAnimal");
 	String favHobby = request.getParameter("favHobby");
+	
+	// encode cookie URL data to handle whitespaces
+	fullName = URLEncoder.encode(fullName, "UTF-8");
+	gender = URLEncoder.encode(gender, "UTF-8");
+	seeking = URLEncoder.encode(seeking, "UTF-8");
+	ethnicity = URLEncoder.encode(ethnicity, "UTF-8");
+	favMovie = URLEncoder.encode(favMovie, "UTF-8");
+	favAnimal = URLEncoder.encode(favAnimal, "UTF-8");
+	favHobby = URLEncoder.encode(favHobby, "UTF-8");
 
 	// create the corresponding cookies
 	// new Cookie(cookie_name, value)
