@@ -1,3 +1,6 @@
+<!-- To handle cookie names with white spaces, need URL Decoder -->
+<%@page import="java.net.URLDecoder" %>
+
 <html>
 <head>
 	<title>My Profile</title>
@@ -21,26 +24,26 @@
 	if (cookiesArray != null) {
 		for (Cookie x : cookiesArray){
 			if (x.getName().equals("myProfile.fullName")) {
-				fullName = x.getValue();
+				fullName = URLDecoder.decode(x.getValue(), "UTF-8");
 			}
 			if (x.getName().equals("myProfile.gender")) {
-				gender = x.getValue();
+				gender = URLDecoder.decode(x.getValue(), "UTF-8");
 			}
 			if (x.getName().equals("myProfile.seeking")){
-				seeking = x.getValue();
+				seeking = URLDecoder.decode(x.getValue(), "UTF-8");
 			}
 			if ("myProfile.ethnicity".equals(x.getName())){
-				ethnicity = x.getValue();
+				ethnicity = URLDecoder.decode(x.getValue(), "UTF-8");
 			}
 			else if ("myProfile.favMovie".equals(x.getName())){
-				favMovie = x.getValue();
+				favMovie = URLDecoder.decode(x.getValue(), "UTF-8");
 			}
 			else if ("myProfile.favAnimal".equals(x.getName())){
-				favAnimal = x.getValue();
+				favAnimal = URLDecoder.decode(x.getValue(), "UTF-8");
 			}
 			// conditional statement does same thing, just written differently
 			else if (x.getName().equals("myProfile.favHobby")) {
-				favHobby = x.getValue();
+				favHobby = URLDecoder.decode(x.getValue(), "UTF-8");
 			}
 		}
 	}
