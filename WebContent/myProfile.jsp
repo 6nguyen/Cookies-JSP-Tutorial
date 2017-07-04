@@ -69,25 +69,32 @@
 	<ul>
 	<%
 		if (fullName != null && !fullName.trim().equals("")) {
-			out.println("<li>Your name has been set to <font color=\"#00FF00\">" + URLDecoder.decode(fullName) + "</font>.</li>");
+			out.println("<li>Your name has been set to <font color=\"#00FF00\">" 
+						+ URLDecoder.decode(fullName) + "</font>.</li>");
 		}
 		if (gender != null && !gender.trim().equals("")){
-			out.println("<li>Your gender has been set to <font color=\"#00FF00\">" + gender + "</font>.</li>");
+			out.println("<li>Your gender has been set to <font color=\"#00FF00\">" 
+						+ gender + "</font>.</li>");
 		}
 		if (seeking != null && !seeking.trim().equals("")) {
-			out.println("<li>Your orientation has been set to <font color=\"#00FF00\">" + URLDecoder.decode(seeking) + "</font>.</li>");
+			out.println("<li>Your orientation has been set to <font color=\"#00FF00\">" 
+						+ URLDecoder.decode(seeking) + "</font>.</li>");
 		}
 		if (ethnicity != null && !ethnicity.trim().equals("")){
-			out.println("<li>Your ethnicity has been set to <font color=\"#00FF00\">" + URLDecoder.decode(ethnicity) + "</font>.</li>");
+			out.println("<li>Your ethnicity has been set to <font color=\"#00FF00\">" 
+						+ URLDecoder.decode(ethnicity) + "</font>.</li>");
 		}
 		if (favMovie != null && !favMovie.trim().equals("")){
-			out.println("<li>Your favorite movie has been set to <font color=\"#00FF00\">" + URLDecoder.decode(favMovie) + "</font>.</li>");
+			out.println("<li>Your favorite movie has been set to <font color=\"#00FF00\">" 
+						+ URLDecoder.decode(favMovie) + "</font>.</li>");
 		}
 		if (favAnimal != null && !favAnimal.trim().equals("")) {
-			out.println("<li>Your favorite animal has been set to <font color=\"#00FF00\">" + URLDecoder.decode(favAnimal) + "</font>.</li>");
+			out.println("<li>Your favorite animal has been set to <font color=\"#00FF00\">" 
+						+ URLDecoder.decode(favAnimal) + "</font>.</li>");
 		}
 		if (favHobby != null && !favHobby.trim().equals("")) {
-			out.println("<li>Your favorite hobby has been set to <font color=\"#00FF00\">" + URLDecoder.decode(favHobby) + "</font>.</li>");
+			out.println("<li>Your favorite hobby has been set to <font color=\"#00FF00\">" 
+						+ URLDecoder.decode(favHobby) + "</font>.</li>");
 		}
 	%>	
 		
